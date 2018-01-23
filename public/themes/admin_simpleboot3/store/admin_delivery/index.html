@@ -1,0 +1,88 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">发货管理</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('AdminDelivery/index')}">
+        订单号:
+        <input type="text" class="form-control" name="keyword" style="width: 200px;"
+               value="{$keyword|default=''}" placeholder="请输入订单号...">
+        发货状态:
+        <select class="form-control" name="status" style="width: 140px;">
+            <option value='999'>全部</option>
+            <option value="2">待发货</option>
+            <option value="3">已发货</option>
+        </select>
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('AdminDelivery/index')}">清空</a>
+    </form>
+
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="200">订单编号</th>
+                <th width="200">收货人</th>
+                <th width="100">发货状态/物流</th>
+                <th width="50">物流费用</th>
+                <th width="50">订单总价</th>
+                <th width="130">下单时间</th>
+                <th width="100">操作</th>
+            </tr>
+            </thead>
+            <foreach name="delivery" item="vo">
+                <tr>
+                    <td>{$vo.order_sn}</td>
+                    <td>
+                        <i class="fa fa-user"></i>:{$vo.delivery_order.snap_address.name}<br/>
+                        <i class="fa fa-mobile"></i>:{$vo.delivery_order.snap_address.mobile}<br/>
+                    </td>
+                    <td>
+                        {$vo.shipping_name}
+                    </td>
+                    <td>
+                        {$vo.shipping_price}
+                    </td>
+                    <td>
+                        {$vo.delivery_order.total_price}
+                    </td>
+                    <td>
+                        {$vo.create_time|date="Y-m-d H:i:s",###}
+                    </td>
+                    <td>
+                        <a href="javascript:parent.openIframeLayer('{:url("AdminDelivery/send",array("id"=>$vo["order_id"]))}','发货详情')" >
+                        <empty name="$vo.shipping_code">
+                            发货
+                            <else/>
+                            详情
+                        </empty></a>
+                    </td>
+                </tr>
+            </foreach>
+            <tfoot>
+            <tr>
+                <th width="200">订单编号</th>
+                <th width="200">收货人</th>
+                <th width="100">所选物流</th>
+                <th width="50">物流费用</th>
+                <th width="50">订单总价</th>
+                <th width="130">下单时间</th>
+                <th width="100">操作</th>
+            </tr>
+            </tfoot>
+        </table>
+
+        <ul class="pagination">{$delivery->render()|default=''}</ul>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+
+</script>
+</body>
+</html>

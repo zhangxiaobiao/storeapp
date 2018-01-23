@@ -1,0 +1,74 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminProductAttribute/index')}">属性管理</a></li>
+        <li><a href="{:url('AdminProductAttribute/add')}">添加属性</a></li>
+        <li class="active"><a href="">编辑属性</a></li>
+    </ul>
+    <div class="row margin-top-20">
+        <div class="col-md-6">
+            <form class="js-ajax-form" action="{:url('AdminProductAttribute/edit')}" method="post">
+                <div class="tab-content">
+
+                    <div class="">
+                        <div class="form-group">
+                            <label for="input-seo_title">属性名称</label>
+                            <div>
+                                <input type="hidden" name="attr_id" value="{$attribute.attr_id}">
+                                <input type="text" class="form-control" id="input-seo_title" name="attr_name" value="{$attribute.attr_name}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-seo_title">所属商品分类</label>
+                            <div>
+                                <select class="form-control" name="type_id" id="">
+                                    <foreach name="categories" item="vo">
+                                        <option value="{$vo.id}" <if condition="$attribute.type_id eq $vo.id ">selected</if> >{$vo.name}</option>
+                                    </foreach>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--<div class="form-group">-->
+                            <!--<label>属性是否唯一</label>-->
+                            <!--<div>-->
+                                <!--<input type="radio" name="attr_type" value="0" checked>唯一属性-->
+                                <!--<input type="radio" name="attr_type" value="1" >单选属性-->
+                                <!--<input type="radio" name="attr_type" value="2" >复选属性-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <label>该属性值得录入方式</label>
+                            <div>
+                                <input type="radio" name="attr_input_type" value="0" <if condition="$attribute.attr_input_type eq 0 ">checked</if> >手工录入
+                                <input type="radio" name="attr_input_type" value="1" <if condition="$attribute.attr_input_type eq 1 ">checked</if> >从下面的列表中选择（一行代表一个可选值）
+                                <!--<input type="radio" name="attr_input_type" value="2" >多行文本框-->
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label >可选值列表</label>
+                            <div>
+                                <textarea type="text" class="form-control"  name="attr_values">{$attribute.attr_values}</textarea>
+                                <p>
+                                    录入方式为手工或者多行文本时，此输入框不需填写</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('EDIT')}</button>
+                    <a class="btn btn-default" href="{:url('AdminProductAttribute/index')}">{:lang('BACK')}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('recruit/index')}">司机招募</a></li>
+    </ul>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+
+                <th width="50">ID</th>
+                <th>{:lang('NAME')}</th>
+                <th>手机</th>
+                <th>地区</th>
+                <th>详细地址</th>
+                <th>预算</th>
+                <th>提交时间</th>
+                <th width="120">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="recruits" item="vo">
+                <tr>
+
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.phone}</td>
+                    <td>{$vo.area}</td>
+                    <td>{$vo.address}</td>
+                    <td>{$vo.budget}</td>
+                    <td>{$vo.create_time}</td>
+                    <td>
+                        <if condition="$vo.status eq 0 ">
+                            <a href="{:url('AdminRecruit/isread',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn">标记已读</a>
+                            <else/>
+                            已读
+                        </if>
+                        <a href="{:url('AdminRecruit/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">
+                            {:lang('DELETE')}
+                        </a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+            <tfoot>
+            <tr>
+
+                <th width="50">ID</th>
+                <th>{:lang('NAME')}</th>
+                <th>手机</th>
+                <th>地区</th>
+                <th>详细地址</th>
+                <th>预算</th>
+                <th>提交时间</th>
+                <th width="120">{:lang('ACTIONS')}</th>
+            </tr>
+            </tfoot>
+        </table>
+
+
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

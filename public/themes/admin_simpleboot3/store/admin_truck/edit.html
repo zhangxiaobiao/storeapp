@@ -1,0 +1,101 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminTruck/index')}">货车管理</a></li>
+        <li><a href="{:url('AdminTruck/add')}">添加货车</a></li>
+        <li class="active"><a href="#">编辑货车</a></li>
+    </ul>
+    <div class="row margin-top-20">
+        <div class="col-md-6">
+            <form class="js-ajax-form" action="{:url('AdminTruck/edit')}" method="post">
+                <div class="tab-content">
+
+                    <div class="">
+                        <div class="form-group">
+                            <label for="input-seo_title">货车名称</label>
+                            <div>
+                                <input type="hidden" name="id" value="{$truck.id}">
+                                <input type="text" class="form-control" id="input-seo_title" name="name" value="{$truck.name}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_title">缩略图</label>
+
+                                <div style="text-align: center;">
+                                    <input type="hidden" name="thumb" id="thumbnail" value="{$truck.thumb}">
+                                    <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                        <if condition="empty($truck.thumb)">
+                                            <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                                 id="thumbnail-preview"
+                                                 width="135" style="cursor: pointer"/>
+                                            <else/>
+                                            <img src="{:cmf_get_image_preview_url($truck.thumb)}"
+                                                 id="thumbnail-preview"
+                                                 width="135" style="cursor: pointer"/>
+                                        </if>
+                                    </a>
+                                    <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                                </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_title">载重（公斤）</label>
+                            <div>
+                                <input type="text" class="form-control"  name="load" value="{$truck.load}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_title">载货体积（单位：立方米）</label>
+                            <div>
+                                <input type="text" class="form-control"  name="size" value="{$truck.size}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_title">规格（1.8×1.2×1.1米）</label>
+                            <div>
+                                <input type="text" class="form-control"  name="volume" value="{$truck.volume}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_title">特殊规格</label>
+                            <div>
+                                <input type="text" class="form-control"  name="specialrequire" value="{$truck.specialrequire}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-seo_title">收费标准</label>
+                            <div>
+                                <textarea type="text" class="form-control"  name="standard" placeholder="30元|5公里起步价|3元|每公里超里程">{$truck.standard}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-seo_title">费用说明</label>
+                            <div>
+                                <textarea type="text" class="form-control"  name="declare">{$truck.declare}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input-seo_title">收费标准</label>
+                            <div>
+                                <textarea type="text" class="form-control"  name="extra">{$truck.extra}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('EDIT')}</button>
+                    <a class="btn btn-default" href="{:url('AdminTruck/index')}">{:lang('BACK')}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

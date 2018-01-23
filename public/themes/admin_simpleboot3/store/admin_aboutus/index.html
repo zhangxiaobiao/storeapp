@@ -1,0 +1,118 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#A" data-toggle="tab">关于我们</a></li>
+			<li><a href="#B" data-toggle="tab">服务条款</a></li>
+			<!--<li><a href="#C" data-toggle="tab">{:lang('URL_SETTING')}</a></li>-->
+			<!--<li><a href="#E" data-toggle="tab">{:lang('COMMENT_SETTING')}</a></li>-->
+			<li><a href="#F" data-toggle="tab">客服电话</a></li>
+		</ul>
+		<form class="form-horizontal js-ajax-form margin-top-20" role="form" action="{:url('AdminAboutus/edit')}" method="post">
+			<fieldset>
+				<div class="tabbable">
+					<div class="tab-content">
+						<div class="tab-pane active" id="A">
+							<div class="form-group">
+								<label class="col-sm-2 control-label"><span class="form-required">*</span>关于我们</label>
+								<div class="col-md-6 col-sm-10">
+									<input type="hidden" name="id" value="{$data.id}">
+									<textarea class="form-control" id="input-site-name" name="detail">{$data.detail|default=''}</textarea>
+
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">关于我们banner</label>
+								<div class="col-md-6 col-sm-10">
+									<div style="text-align: center;">
+										<input type="hidden" name="thumb" id="thumbnail" value="{$data.thumb}">
+										<a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+											<if condition="empty($data.thumb)">
+												<img src="__TMPL__/public/assets/images/default-thumbnail.png"
+													 id="thumbnail-preview"
+													 width="135" style="cursor: pointer"/>
+												<else/>
+												<img src="{:cmf_get_image_preview_url($data.thumb)}"
+													 id="thumbnail-preview"
+													 width="135" style="cursor: pointer"/>
+											</if>
+
+
+										</a>
+										<input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="1">{:lang('SAVE')}</button>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="B">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">服务条款</label>
+								<div class="col-md-8 col-sm-10">
+									<textarea name="service_clause" class="form-control" cols="30" rows="10">{$data.service_clause}</textarea>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">{:lang('SAVE')}</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane" id="F">
+
+							<div class="form-group">
+								<label for="input-banned_usernames" class="col-sm-2 control-label">客服电话</label>
+								<div class="col-md-6 col-sm-10">
+									<input class="form-control" id="input-banned_usernames" name="service_phone" value="{$data.service_phone|default=''}">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">{:lang('SAVE')}</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+	</div>
+	<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+        <script type="text/javascript">
+        //编辑器路径定义
+        var editorURL = GV.WEB_ROOT;
+	</script>
+	<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+        $(function () {
+
+            editorcontent = new baidu.editor.ui.Editor();
+            editorcontent.render('content');
+            try {
+                editorcontent.sync();
+            } catch (err) {
+            }
+
+            $('.btn-cancel-thumbnail').click(function () {
+                $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+                $('#thumbnail').val('');
+            });
+
+        });
+
+	</script>
+</body>
+</html>

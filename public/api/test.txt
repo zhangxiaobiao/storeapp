@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "id": 4,
+            "counts": 2
+        },
+        {
+            "id": 2,
+            "counts": 3
+        }
+    ],
+    "user_note":"hhhhhhh"
+}{
+    "products": [
+        {
+            "id": 4,
+            "counts": 2
+        },
+        {
+            "id": 2,
+            "counts": 3
+        }
+    ],
+    "user_note":"hhhhhhh"
+}

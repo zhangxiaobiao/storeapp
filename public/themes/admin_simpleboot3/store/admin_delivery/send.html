@@ -1,0 +1,114 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+
+    <form class="js-ajax-form" action="{:url('AdminDelivery/send',array('id'=>$delivery['id']))}" method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+
+                <tr>
+                    <th  width="100">收货地址</th>
+                    <td colspan="4">
+                        收货人：{$delivery.order_sn}<br/>
+                        电话：{$delivery.create_time}<br/>
+                        配送方式:
+                        <select name="shipping_code" id="" style="width: 100px">
+                            <foreach name="shippings" item="vo">
+                                <option <if condition="$delivery.shipping_code eq $vo.shipping_code">selected=selected</if> value="{$vo.shipping_code}">{$vo.shipping_name}</option>
+                            </foreach>
+
+                        </select>
+                    </td>
+                    <td colspan="3">
+                        配送费用：{$delivery.shipping_price}<br/>
+                        快递单号：
+                        <input style="width: 150px" type="text" name="invoice_no" value="{$delivery.invoice_no}">
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">收货地址</th>
+                    <td colspan="7">
+                        收货人：{$delivery.delivery_order.snap_address.name}<br/>
+                        电话：{$delivery.delivery_order.snap_address.mobile}<br/>
+                        地址：{$delivery.delivery_order.snap_address.province}{$delivery.delivery_order.snap_address.city}{$delivery.delivery_order.snap_address.country}{$delivery.delivery_order.snap_address.detail}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">留言</th>
+                    <td colspan="7">
+                        {$delivery.delivery_order.user_note|default="无"}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">管理员备注</th>
+                    <td colspan="7">
+                        {$delivery.delivery_order.admin_note}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">发货备注</th>
+                    <td colspan="7">
+                            <div class="form-group">
+                                <textarea name="note" class="form-control">{$delivery.note}</textarea>
+                            </div>
+
+
+
+
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+    <table class="table table-hover table-bordered table-list">
+        <thead>
+        <tr>
+            <th width="200">商品id</th>
+            <th width="200">商品名称</th>
+            <th width="200">购买个数</th>
+            <th width="50">价格</th>
+        </tr>
+        </thead>
+        <foreach name="$delivery.delivery_order.snap_items" item="vo">
+            <tr>
+                <td>
+                    {$vo.id}
+                </td>
+                <td>
+                    {$vo.title}
+                </td>
+                <td>
+                    {$vo.counts}
+                </td>
+                <td>
+                    ￥{$vo.totalPrice}
+                </td>
+
+            </tr>
+        </foreach>
+
+
+    </table>
+        <empty name="$delivery.shipping_code">
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary js-ajax-submit">确定发货</button>
+            </div>
+        </empty>
+
+    </form>
+
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+
+
+</body>
+</html>

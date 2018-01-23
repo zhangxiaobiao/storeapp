@@ -1,0 +1,48 @@
+<include file="public@header" xmlns="http://www.w3.org/1999/html"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminShipping/index')}">分类管理</a></li>
+        <li class="active"><a href="{:url('AdminShipping/add')}">添加分类</a></li>
+    </ul>
+    <div class="row margin-top-20">
+        <div class="col-md-6">
+            <form class="js-ajax-form" action="{:url('AdminShipping/addPost')}" method="post">
+                <div class="tab-content">
+
+                    <div class="">
+                        <div class="form-group">
+                            <label for="input-seo_title">快递名称</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-seo_title" name="shipping_name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_title1">快递编码</label>
+                            <div>
+                                <input type="text" class="form-control" id="input-seo_title1" name="shipping_code">
+                                <p><a href="https://www.ickd.cn/api/list.html" target="_blank">查询快递编码</a></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-seo_title2">描述</label>
+                            <div>
+                                <textarea class="form-control" id="input-seo_title2" name="shipping_desc"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+                    <a class="btn btn-default" href="{:url('AdminShipping/index')}">{:lang('BACK')}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

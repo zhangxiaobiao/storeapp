@@ -1,0 +1,117 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th width="100">订单ID</th>
+                    <td>
+                        {$detail.id}
+                    </td>
+                    <th width="120">订单号</th>
+                    <td>
+                        {$detail.order_no}
+                    </td>
+                    <th width="100">下单人</th>
+                    <td>
+                        <i class="fa fa-user"></i>:{$detail.user_info.user_nickname}<br/>
+                        <i class="fa fa-mobile"></i>:{$detail.user_info.mobile}
+                    </td>
+                    <th width="100">是否预约</th>
+                    <td>
+                        {$detail.makeorder|default='无'}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">订单创建时间</th>
+                    <td colspan="3">
+                        {$detail.create_time|date="Y-m-d H:i:s",###}
+                    </td>
+                    <!--<th width="100">发货时间</th>-->
+                    <!--<td>-->
+                        <!--{$detail.update_time|date="Y-m-d H:i:s",###|default="未发货"}-->
+                    <!--</td>-->
+                    <th width="120">完成时间</th>
+                    <td colspan="3">
+                        {$detail.complete_time|date="Y-m-d H:i:s",###}
+                    </td>
+                    <!--<th width="100">总价</th>-->
+                    <!--<td>-->
+                        <!--￥{$detail.total_price}-->
+                    <!--</td>-->
+                </tr>
+                <tr>
+                    <th width="100">货车类型</th>
+                    <td colspan="2">
+                        {$detail.truck_info.name}
+                    </td>
+                    <th width="100">特殊规格</th>
+                    <td colspan="4">
+                        {$detail.truck_info.specialform ? $detail.truck_info.specialrequire : '无'}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">发货地址</th>
+                    <td colspan="7">
+                        {$detail.send_addr}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">收货地址</th>
+                    <td colspan="7">
+                        {$detail.received_addr}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">额外需求</th>
+                    <td colspan="2">
+                        {$detail.extrarequire}
+                    </td>
+                    <th width="100">货物类型</th>
+                    <td colspan="2">
+                        {$detail.goodskind}
+                    </td>
+                    <th width="100">跟车人数</th>
+                    <td colspan="1">
+                        {$detail.carfollow}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">发货人信息</th>
+                    <td colspan="7">
+                        {$detail.send_address.name}   {$detail.send_address.mobile}<br/>
+                        {$detail.send_address.province}/
+                        {$detail.send_address.city}/
+                        {$detail.send_address.country}<br/>
+                        {$detail.send_address.detail}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">收货人信息</th>
+                    <td colspan="7">
+                        {$detail.receive_address.name}   {$detail.receive_address.mobile}<br/>
+                        {$detail.receive_address.province}/
+                        {$detail.receive_address.city}/
+                        {$detail.receive_address.country}<br/>
+                        {$detail.receive_address.detail}
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+
+
+</body>
+</html>

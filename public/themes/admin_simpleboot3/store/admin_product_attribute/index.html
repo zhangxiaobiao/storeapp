@@ -1,0 +1,105 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">所有属性</a></li>
+        <li><a href="{:url('AdminProductAttribute/add')}">添加属性</a></li>
+    </ul>
+    <!--<form class="well form-inline margin-top-20" method="post" action="{:url('AdminProductAttribute/index')}">-->
+
+        <!--关键字:-->
+        <!--<input type="text" class="form-control" name="keyword" style="width: 200px;"-->
+               <!--value="{$keyword|default=''}" placeholder="请输入关键字...">-->
+        <!--<input type="submit" class="btn btn-primary" value="搜索"/>-->
+        <!--<a class="btn btn-danger" href="{:url('AdminProductAttribute/index')}">清空</a>-->
+    <!--</form>-->
+    <form class="js-ajax-form" action="" method="post">
+        <div class="table-actions">
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('AdminProductAttribute/listOrder')}">{:lang('SORT')}
+            </button>
+
+
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="15">
+                    <label>
+                        <input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x">
+                    </label>
+                </th>
+                <th width="50">{:lang('SORT')}</th>
+                <th width="50">ID</th>
+                <th>属性名称</th>
+                <th>所属分类</th>
+                <th>输入方式</th>
+                <th>可选值列表</th>
+                <th width="90">操作</th>
+            </tr>
+            </thead>
+            <foreach name="attributes" item="vo">
+                <tr>
+                    <td>
+                        <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                               value="{$vo.attr_id}" title="ID:{$vo.attr_id}">
+                    </td>
+                        <td>
+                            <input name="list_orders[{$vo.attr_id}]" class="input-order" type="text"
+                                   value="{$vo.list_order}">
+                        </td>
+                    <td><b>{$vo.attr_id}</b></td>
+                    <td>
+                        {$vo.attr_name}
+                    </td>
+                    <td>
+                        {$vo.type_id}
+                    </td>
+                    <td>
+                       {$vo.attr_input_type}
+                    </td>
+                    <td>
+                        {$vo.attr_values}
+                    </td>
+                    <td>
+                        <a href="{:url('AdminProductAttribute/edit',array('id'=>$vo['attr_id']))}">{:lang('EDIT')}</a>
+                        <a href="{:url('AdminProductAttribute/delete',array('id'=>$vo['attr_id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+                    </td>
+                </tr>
+            </foreach>
+            <tfoot>
+            <tr>
+                <th width="15"><label><input type="checkbox" class="js-check-all" data-direction="x"
+                                             data-checklist="js-check-x"></label></th>
+
+                <th width="50">{:lang('SORT')}</th>
+                <th width="50">ID</th>
+                <th>属性名称</th>
+                <th>所属分类</th>
+                <th>输入方式</th>
+                <th>可选值列表</th>
+                <th width="90">操作</th>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="table-actions">
+            <button class="btn btn-primary btn-sm js-ajax-submit" type="submit"
+                    data-action="{:url('AdminProductAttribute/listOrder')}">{:lang('SORT')}
+            </button>
+
+        </div>
+        <ul class="pagination">{$attributes->render()|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+
+</script>
+</body>
+</html>
