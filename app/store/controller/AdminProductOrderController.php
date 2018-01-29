@@ -97,6 +97,7 @@ class AdminProductOrderController extends AdminBaseController
     public function detail($id)
     {
         $detail = ProductOrderModel::where('id', $id)->find();
+        $detail['invoice_info'] = json_decode($detail['invoice_info'],true);
         $this->assign('detail', $detail);
         return $this->fetch();
     }
@@ -125,15 +126,17 @@ class AdminProductOrderController extends AdminBaseController
         //更新发货表
         $shipping['order_id'] = $order->id;
         $shipping['order_sn'] = $order->product_order_no;
-        $shipping['user_id'] = $order->user_id;
+        $shipping['user_id'] = $order->user_id['id'];
         $shipping['admin_id'] = cmf_get_current_admin_id();
         $address = $order->snap_address;
         $shipping['consignee'] = $address['name'];
-        $shipping['mobile'] = $address['mobile'];
-        $shipping['province'] = $address['province'];
-        $shipping['city'] = $address['city'];
-        $shipping['district'] = $address['country'];
-        $shipping['address'] = $address['detail'];
+//        $shipping['mobile'] = $address['mobile'];
+//        $shipping['province'] = $address['province'];
+//        $shipping['city'] = $address['city'];
+//        $shipping['district'] = $address['country'];
+//        $shipping['address'] = $address['detail'];
+        $shipping['mobile'] = $address['tel'];
+        $shipping['address'] = $address['address'];
         $shipping['shipping_price'] = $order->shipping_price;
 
         DeliveryModel::create($shipping);
