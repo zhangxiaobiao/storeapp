@@ -36,8 +36,9 @@
                     <th width="100">收货地址</th>
                     <td colspan="7">
                         收货人：{$delivery.delivery_order.snap_address.name}<br/>
-                        电话：{$delivery.delivery_order.snap_address.mobile}<br/>
-                        地址：{$delivery.delivery_order.snap_address.province}{$delivery.delivery_order.snap_address.city}{$delivery.delivery_order.snap_address.country}{$delivery.delivery_order.snap_address.detail}
+                        电话：{$delivery.mobile}<br/>
+
+                        地址：{$delivery.address}
                     </td>
                 </tr>
                 <tr>

@@ -55,6 +55,7 @@ class AdminDeliveryController extends AdminBaseController
             $delivery = DeliveryModel::with('deliveryOrder')->order('id desc')->where('delete_time', '=', 0)->paginate(20);
 
         }
+//        dump($delivery);die;
         $this->assign('delivery', $delivery);
         return $this->fetch();
     }
