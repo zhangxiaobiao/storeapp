@@ -32,7 +32,7 @@ class ProductOrderModel extends Model
 
     public function getUserIdAttr($value)
     {
-        $data = Db::name('user')->field('mobile,user_nickname')->where('id', $value)->find();
+        $data = Db::name('user')->field('id,mobile,user_nickname')->where('id', $value)->find();
         return $data;
     }
 

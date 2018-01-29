@@ -56,8 +56,8 @@
                     <th width="100">收货地址</th>
                     <td colspan="7">
                         收货人：{$detail.snap_address.name}<br/>
-                        电话：{$detail.snap_address.mobile}<br/>
-                        地址：{$detail.snap_address.province}{$detail.snap_address.city}{$detail.snap_address.country}{$detail.snap_address.detail}
+                        电话：  {$detail.snap_address.tel}<br/>
+                        地址：{$detail.snap_address.address}
                     </td>
                 </tr>
                 <tr>
@@ -116,7 +116,7 @@
 
 
     </table>
-        <if condition="$detail.status lt 2 ">
+        <if condition="$detail.status.status lt 2 ">
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary js-ajax-submit">确认订单</button>
             </div>
