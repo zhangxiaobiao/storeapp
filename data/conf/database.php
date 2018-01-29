@@ -7,10 +7,9 @@ return [
     // 数据库类型
     'type'     => 'mysql',
     // 服务器地址
-//    'hostname' => '192.168.1.25',
-    'hostname' => 'localhost',
+    'hostname' => '127.0.0.1',
     // 数据库名
-    'database' => 'store',
+    'database' => 'storeapp',
     // 用户名
     'username' => 'root',
     // 密码
