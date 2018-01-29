@@ -97,6 +97,7 @@ class AdminProductOrderController extends AdminBaseController
     public function detail($id)
     {
         $detail = ProductOrderModel::where('id', $id)->find();
+        $detail['invoice_info'] = json_decode($detail['invoice_info'],true);
         $this->assign('detail', $detail);
         return $this->fetch();
     }
