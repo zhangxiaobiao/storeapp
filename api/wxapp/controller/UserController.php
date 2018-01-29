@@ -12,7 +12,7 @@ use api\store\controller\RestPayController;
 use cmf\controller\RestBaseController;
 use wxapp\aes\WXBizDataCrypt;
 
-class UserController extends RestBaseController
+class UserController extends RestPayController
 {
     // 获取用户信息
     public function getUserInfo()

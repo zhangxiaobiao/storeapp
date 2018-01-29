@@ -34,8 +34,6 @@ class Order extends RestBaseController
         //oProducts 和 products 作对比
         //products从数据库中查询出来
         $this->oProducts = $oProducts['products'];
-
-
         $this->products = $this->getProductsByOrder($oProducts['products']);
         $this->uid = $uid;
         $this->user_note = $oProducts['user_note'];
@@ -54,7 +52,6 @@ class Order extends RestBaseController
     //
     private function createOrder($snap)
     {
-        $user_note = $this->user_note;
         Db::startTrans();
         try{
             $orderNo = self::makeOrderNo();
@@ -66,18 +63,17 @@ class Order extends RestBaseController
             $order->snap_name = $snap['snapName'];
             $order->snap_subname = $snap['snapsubName'];
             $order->total_count = $snap['totalCount'];
-            $order->shipping_price = $snap['shippingPrice'];
-            $order->snap_address = json_encode($user_note['address']);
-            $order->invoice_info = json_encode($user_note['invoice']);
+            $order->snap_address = $snap['snapAddress'];
+            $order->user_note = $this->user_note;
             $order->snap_items = json_encode($snap['pStatus']);
             $order->save();
             $orderID = $order->id;
             $create_time = $order->create_time;
 
             foreach ($this->oProducts as &$p){
-                $p['order_id'] = (int)$orderID;
-                $p['product_id'] = (int)$p['id'];
-                $p['count'] = (int)$p['counts'];
+                $p['order_id'] = $orderID;
+                $p['product_id'] = $p['id'];
+                $p['count'] = $p['counts'];
                 unset($p['id']);
                 unset($p['counts']);
             }
@@ -112,7 +108,6 @@ class Order extends RestBaseController
     //生成订单快照
     private function snapOrder($status)
     {
-
         $snap = [
             'orderPrice' => 0,
             'totalCount' => 0,
@@ -122,13 +117,13 @@ class Order extends RestBaseController
             'snapsubName'=> '',
             'snapImg'    => ''
         ];
-        $snap['orderPrice'] = $status['orderPrice'] + $this->getShippingPrice($this->products);
+        $snap['orderPrice'] = $status['orderPrice'];
         $snap['totalCount'] = $status['totalCount'];
-        $snap['shippingPrice'] = $this->getShippingPrice($this->products);
         $snap['pStatus'] = $status['pStatusArray'];
+        $snap['snapAddress'] = json_encode($this->getUserAddress());
         $snap['snapName'] = $this->products[0]['title'];
         $snap['snapsubName'] = $this->products[0]['subtitle'];
-        $snap['snapImg'] = $this->products[0]['thumb'][0]['image'];
+        $snap['snapImg'] = $this->products[0]['thumb'];
         
         if (count($this->products) > 1){
             $snap['snapName'] .= '等';
@@ -167,30 +162,20 @@ class Order extends RestBaseController
             'pass' => true,
             'orderPrice' => 0,
             'totalCount' => 0,
-            'spec' => '',
             'pStatusArray' => []
         ];
+
         foreach ($this->oProducts as $oProduct)
         {
             $pStatus = $this->getProductStatus($oProduct['id'],$oProduct['counts'],$this->products);
             if (!$pStatus['haveStock']){
                 $status['pass'] = false;
             }
-            $pStatus['spec'] = $oProduct['spec'];
             $status['orderPrice'] += $pStatus['totalPrice'];
             $status['totalCount'] += $pStatus['counts'];
             array_push($status['pStatusArray'], $pStatus);
         }
         return $status;
-    }
-
-    //计算运费，同一个id商品不同规格 只计算一次运费
-    private function getShippingPrice($product){
-        $shipping_price = 0;
-        foreach ($product as $p){
-            $shipping_price += $p['shipping_price'];
-        }
-        return $shipping_price;
     }
 
     private function getProductStatus($oPID, $oCount, $products)
@@ -203,7 +188,6 @@ class Order extends RestBaseController
             'price' => 0,
             'title' => '',
             'thumb' => '',
-            'shippingPrice' => 0,
             'totalPrice' => 0
         ];
 
@@ -222,8 +206,7 @@ class Order extends RestBaseController
             $pStatus['title'] = $product['title'];
             $pStatus['counts'] = $oCount;
             $pStatus['price'] = $product['price'];
-            $pStatus['thumb'] = $product['thumb'][0]['image'];
-            $pStatus['shippingPrice'] = $product['shipping_price'];
+            $pStatus['thumb'] = $product['thumb'];
             $pStatus['totalPrice'] = $product['price']*$oCount;
             if ($product['store_count'] - $oCount >= 0){
                 $pStatus['haveStock'] = true;
@@ -241,7 +224,7 @@ class Order extends RestBaseController
        {
            array_push($oPIDs, $item['id']);
        }
-       $products = ProductModel::all($oPIDs)->visible(['id','price','store_count', 'title','subtitle', 'thumb','shipping_price'])->toArray();
+       $products = ProductModel::all($oPIDs)->visible(['id','price','store_count', 'title','subtitle', 'thumb'])->toArray();
        return $products;
     }
 

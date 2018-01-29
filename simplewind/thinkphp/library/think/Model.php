@@ -1321,14 +1321,14 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
                 $auto = true;
             }
             foreach ($dataSet as $key => $data) {
-                if (!empty($auto) && isset($data[$pk])) {
+                if ($this->isUpdate || (!empty($auto) && isset($data[$pk]))) {
                     $result[$key] = self::update($data, [], $this->field);
                 } else {
                     $result[$key] = self::create($data, $this->field);
                 }
             }
             $db->commit();
-            return $result;
+            return $this->toCollection($result);
         } catch (\Exception $e) {
             $db->rollback();
             throw $e;

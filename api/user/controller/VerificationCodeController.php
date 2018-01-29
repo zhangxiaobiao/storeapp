@@ -83,10 +83,10 @@ class VerificationCodeController extends RestBaseController
 
             cmf_verification_code_log($data['username'], $code);
 
-            if (!empty($result['error'])) {
+            if (!empty($result['message'])) {
                 $this->error($result['message']);
             } else {
-                $this->success('发送成功!'.$code);
+                $this->success('发送成功!');
             }
 
         }

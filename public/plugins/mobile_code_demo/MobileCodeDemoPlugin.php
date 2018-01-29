@@ -77,11 +77,12 @@ class MobileCodeDemoPlugin extends Plugin
                 'message' => '发送失败!'
             ];
         }
+
         return $msg;
     }
 
     public function test1($mobile,$code){
-        $apikey = ""; //修改为您的apikey(https://www.yunpian.com)登录官网后获取
+        $apikey = "6024faceda8e4105e39ceb106cfc7397"; //修改为您的apikey(https://www.yunpian.com)登录官网后获取
         $text="【云片网】您的验证码是1234";
         $ch = curl_init();
 

@@ -13,7 +13,6 @@ use api\store\model\ProductOrderModel;
 use cmf\controller\RestBaseController;
 use cmf\controller\RestUserBaseController;
 use api\store\service\Order as OrderService;
-use think\Db;
 
 class ProductOrderController extends RestBaseController
 {
@@ -29,17 +28,16 @@ class ProductOrderController extends RestBaseController
     //成功：也需要进行库存量的检测
     //成功：进行库存量的扣除， 失败：返回一个支付失败的结果
 
-    public function getSummarySByUser($page=1, $size=5)
+    public function getSummarySByUser($page=1, $size=15)
     {
         $this->checkOrderStatus();
         $data = $this->request->param();
-        $type = $this->request->get('type');
         $rs = $this->validate($data, 'PagingParameter');
         if (!$rs){
             $this->error($rs);
         }
         $uid = $this->userId;
-        $pagingOrders = ProductOrderModel::getSummaryByUser($type,$uid,$page,$size);
+        $pagingOrders = ProductOrderModel::getSummaryByUser($uid,$page,$size);
         if ($pagingOrders->isEmpty()){
             return [
                 'data' => [],
@@ -94,18 +92,6 @@ class ProductOrderController extends RestBaseController
         return $status;
     }
 
-    /**
-     * 统计订单 各状态以及数量
-     */
-    public function statusNum()
-    {
-        $uid = $this->userId;
-        $status['type1'] = ProductOrderModel::where(['user_id'=>$uid,'status'=>0])->count();
-        $status['type2'] = ProductOrderModel::where(['user_id'=>$uid,'status'=>3])->count();
-        $status['type3'] = ProductOrderModel::where(['user_id'=>$uid,'status'=>6])->count();
-        $status['type4'] = ProductOrderModel::where(['user_id'=>$uid])->count();
-        return $status;
-    }
 
 
 
