@@ -10,10 +10,10 @@ namespace api\lib\enum;
 class OrderStatusEnum
 {
     // 待支付
-    const UNPAID = 1;
+    const UNPAID = 0;
 
     // 已支付
-    const PAID = 2;
+    const PAID = 1;
 
     // 已发货
     const DELIVERED = 3;

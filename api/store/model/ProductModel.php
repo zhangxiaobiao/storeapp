@@ -30,7 +30,6 @@ class ProductModel extends Model
                 return $data['photos'];
             }
         }
-
         return $value;
 
     }
@@ -42,16 +41,21 @@ class ProductModel extends Model
 
     public function getPriceAttr($value)
     {
-        return number_format($value/100, 2, '.', '');
+        return number_format($value/100, 2, '.', '')+0;
     }
 
     public function getOrgpriceAttr($value)
     {
-        return number_format($value/100, 2,'.', '');
+        return number_format($value/100, 2,'.', '')+0;
     }
 
     public function getInitpriceAttr($value)
     {
-        return number_format($value/100, 2,'.', '');
+        return number_format($value/100, 2,'.', '')+0;
+    }
+
+    public function getShippingPriceAttr($value)
+    {
+        return number_format($value/100, 2,'.', '')+0;
     }
 }
