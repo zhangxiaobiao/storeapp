@@ -1,0 +1,1533 @@
+---------------------------------------------------------------
+[ 2018-01-23T17:03:56+08:00 ] 127.0.0.1 GET /admin/index/index.html
+[ info ] storeapp.com/admin/index/index.html [运行时间：0.551654s][吞吐率：1.81req/s] [内存消耗：3,368.34kb] [文件加载：77]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.057992s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/public/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003871s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003889s ]
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ /Users/zhangshibiao/code/php/storeapp/app/admin/controller/IndexController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin/index/index.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016981s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.020275s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.018262s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'cdn_settings' LIMIT 1 [ RunTime:0.005544s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_settings' LIMIT 1 [ RunTime:0.005925s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020537s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_admin_menu` [ RunTime:0.019275s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007490s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.008818s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 71  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.008281s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007880s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 95  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007633s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 29  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007220s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 78  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007682s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007260s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 61  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006933s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 75  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006756s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 93  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006187s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 158  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007027s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 109  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006920s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 49  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007226s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 50  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007062s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 110  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006986s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 152  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006393s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 153  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006629s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 156  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006350s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 1  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.008526s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 2  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006372s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 42  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007024s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 120  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006647s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 121  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007789s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 131  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007135s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 139  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007380s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 145  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007377s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 180  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.008242s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 181  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007309s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 193  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007958s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 215  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007381s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 219  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007146s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 223  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.012516s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 189  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007839s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 224  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.017008s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 230  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.007904s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 237  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006456s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_admin_menu` WHERE  `parent_id` = 239  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.006788s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006482s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:03:56+08:00 ] 127.0.0.1 GET /admin/main/index.html
+[ info ] storeapp.com/admin/main/index.html [运行时间：0.126821s][吞吐率：7.89req/s] [内存消耗：2,981.41kb] [文件加载：74]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.045181s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.000710s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.000925s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\MainController->index[ /Users/zhangshibiao/code/php/storeapp/app/admin/controller/MainController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin/main/index.html [ array (
+  0 => 'admin',
+  1 => 'dashboard_widgets',
+  2 => 'dashboard_widget_plugins',
+  3 => 'has_smtp_setting',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011999s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.021015s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.004674s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.019526s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.014816s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'admin_dashboard_widgets' LIMIT 1 [ RunTime:0.006539s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'smtp_setting' LIMIT 1 [ RunTime:0.006219s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:03:59+08:00 ] 127.0.0.1 GET /admin/hook/index.html
+[ info ] storeapp.com/admin/hook/index.html [运行时间：0.154968s][吞吐率：6.45req/s] [内存消耗：3,282.39kb] [文件加载：77]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.049186s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'hook',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001186s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001289s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\HookController->index[ /Users/zhangshibiao/code/php/storeapp/app/admin/controller/HookController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/admin/hook/index.html [ array (
+  0 => 'admin',
+  1 => 'hooks',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012960s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.021273s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.007545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020959s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007897s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook` [ RunTime:0.020274s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_hook` [ RunTime:0.006947s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:10+08:00 ] 127.0.0.1 GET /store/admin_product_order/index.html
+[ info ] storeapp.com/store/admin_product_order/index.html [运行时间：0.248566s][吞吐率：4.02req/s] [内存消耗：3,284.58kb] [文件加载：78]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.059829s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.003479s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003717s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductOrderController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductOrderController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_order/index.html [ array (
+  0 => 'admin',
+  1 => 'current_status',
+  2 => 'orders',
+  3 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018119s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.020334s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.007196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020407s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.024546s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `status` = 1 [ RunTime:0.007747s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product_order` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.005825s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.006845s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.004668s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.004386s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.004865s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.007795s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:13+08:00 ] 127.0.0.1 GET /store/admin_delivery/index.html
+[ info ] storeapp.com/store/admin_delivery/index.html [运行时间：0.188960s][吞吐率：5.29req/s] [内存消耗：3,363.37kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.042098s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_delivery',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001143s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001462s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminDeliveryController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminDeliveryController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_delivery/index.html [ array (
+  0 => 'admin',
+  1 => 'delivery',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010585s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019158s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006779s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.021500s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007218s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_delivery_doc` [ RunTime:0.020508s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_delivery_doc` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006691s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_delivery_doc` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.006790s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.019569s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `id` IN (3) [ RunTime:0.007951s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:15+08:00 ] 127.0.0.1 GET /store/admin_invoice/index.html
+[ info ] storeapp.com/store/admin_invoice/index.html [运行时间：0.151110s][吞吐率：6.62req/s] [内存消耗：2,976.04kb] [文件加载：74]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.043050s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_invoice',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001133s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003642s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminInvoiceController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminInvoiceController.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010197s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019458s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.021347s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007632s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_invoice` [ RunTime:0.020506s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_invoice` [ RunTime:0.008026s ]
+[ error ] [0]模板文件不存在:themes/admin_simpleboot3/store/admin_invoice/index.html[/Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/library/think/view/driver/Think.php:80]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:17+08:00 ] 127.0.0.1 GET /store/admin_product_order/index.html
+[ info ] storeapp.com/store/admin_product_order/index.html [运行时间：0.190058s][吞吐率：5.26req/s] [内存消耗：3,284.58kb] [文件加载：78]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.044333s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001328s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.000940s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductOrderController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductOrderController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_order/index.html [ array (
+  0 => 'admin',
+  1 => 'current_status',
+  2 => 'orders',
+  3 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011439s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.020159s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.005370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.022142s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007792s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.020484s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `status` = 1 [ RunTime:0.007135s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product_order` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006282s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.007685s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006120s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006290s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006350s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.004429s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:18+08:00 ] 127.0.0.1 GET /store/admin_delivery/index.html
+[ info ] storeapp.com/store/admin_delivery/index.html [运行时间：0.179768s][吞吐率：5.56req/s] [内存消耗：3,363.37kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.043722s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_delivery',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001396s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001017s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminDeliveryController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminDeliveryController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_delivery/index.html [ array (
+  0 => 'admin',
+  1 => 'delivery',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010382s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019443s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.005999s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020590s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.008210s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_delivery_doc` [ RunTime:0.021144s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_delivery_doc` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006119s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_delivery_doc` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.006655s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.015072s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `id` IN (3) [ RunTime:0.006848s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:19+08:00 ] 127.0.0.1 GET /store/admin_shipping/index.html
+[ info ] storeapp.com/store/admin_shipping/index.html [运行时间：0.140564s][吞吐率：7.11req/s] [内存消耗：3,192.65kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.039257s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_shipping',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001236s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001723s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminShippingController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminShippingController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_shipping/index.html [ array (
+  0 => 'admin',
+  1 => 'shippings',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007805s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019149s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006941s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020186s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006186s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_shipping` [ RunTime:0.020112s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_shipping` [ RunTime:0.006747s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:22+08:00 ] 127.0.0.1 GET /store/admin_product/index.html
+[ info ] storeapp.com/store/admin_product/index.html [运行时间：0.226473s][吞吐率：4.42req/s] [内存消耗：3,412.42kb] [文件加载：84]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.042154s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001372s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001238s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product/index.html [ array (
+  0 => 'admin',
+  1 => 'products',
+  2 => 'cur_category',
+  3 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009303s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.018659s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.007489s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.024507s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product` [ RunTime:0.020474s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006134s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product` WHERE  `delete_time` = 0 ORDER BY list_order asc, id desc LIMIT 0,20 [ RunTime:0.007143s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_category` [ RunTime:0.020953s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` WHERE  `id` IN (1,2,3) [ RunTime:0.006417s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` [ RunTime:0.005997s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.015416s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'storage' LIMIT 1 [ RunTime:0.005327s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:23+08:00 ] 127.0.0.1 GET /store/admin_product/index.html
+[ info ] storeapp.com/store/admin_product/index.html [运行时间：0.213755s][吞吐率：4.68req/s] [内存消耗：3,412.42kb] [文件加载：84]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.045832s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001203s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001070s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product/index.html [ array (
+  0 => 'admin',
+  1 => 'products',
+  2 => 'cur_category',
+  3 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008860s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.022717s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.007382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020181s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007342s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product` [ RunTime:0.020164s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006269s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product` WHERE  `delete_time` = 0 ORDER BY list_order asc, id desc LIMIT 0,20 [ RunTime:0.006626s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_category` [ RunTime:0.019162s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` WHERE  `id` IN (1,2,3) [ RunTime:0.006393s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` [ RunTime:0.008101s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.018511s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'storage' LIMIT 1 [ RunTime:0.005515s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:24+08:00 ] 127.0.0.1 GET /store/admin_product_category/index.html
+[ info ] storeapp.com/store/admin_product_category/index.html [运行时间：0.129571s][吞吐率：7.72req/s] [内存消耗：3,191.21kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.040713s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_category',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001206s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001281s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductCategoryController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductCategoryController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_category/index.html [ array (
+  0 => 'admin',
+  1 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008508s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019094s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.015604s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006275s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_category` [ RunTime:0.014861s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` WHERE  `delete_time` = 0 [ RunTime:0.005676s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:25+08:00 ] 127.0.0.1 GET /store/admin_product_type/index.html
+[ info ] storeapp.com/store/admin_product_type/index.html [运行时间：0.138293s][吞吐率：7.23req/s] [内存消耗：3,187.92kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.039605s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_type',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001350s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001463s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductTypeController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductTypeController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_type/index.html [ array (
+  0 => 'admin',
+  1 => 'types',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007819s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019263s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006343s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.019857s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007553s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_type` [ RunTime:0.018107s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_type` [ RunTime:0.006678s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:26+08:00 ] 127.0.0.1 GET /store/admin_spec/index.html
+[ info ] storeapp.com/store/admin_spec/index.html [运行时间：0.200234s][吞吐率：4.99req/s] [内存消耗：3,283.99kb] [文件加载：79]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.046921s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_spec',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001392s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.003510s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminSpecController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminSpecController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_spec/index.html [ array (
+  0 => 'admin',
+  1 => 'specs',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012918s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.021503s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.005484s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020602s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007212s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_spec` [ RunTime:0.019752s ]
+[ sql ] [ SQL ] SELECT `SpecModel`.* FROM `cmf_spec` `SpecModel` INNER JOIN `cmf_spec_item` `SpecItemModel` ON `SpecModel`.`id`=`SpecItemModel`.`spec_id` GROUP BY `SpecItemModel`.`spec_id` HAVING count(*)>0 ORDER BY list_order asc, id desc [ RunTime:0.006952s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_spec_item` [ RunTime:0.018694s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec_item` WHERE  `spec_id` = 7 [ RunTime:0.006111s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec_item` WHERE  `spec_id` = 6 [ RunTime:0.006607s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec_item` WHERE  `spec_id` = 5 [ RunTime:0.007715s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:30+08:00 ] 127.0.0.1 GET /store/admin_spec/edit/id/6.html
+[ info ] storeapp.com/store/admin_spec/edit/id/6.html [运行时间：0.186881s][吞吐率：5.35req/s] [内存消耗：3,289.54kb] [文件加载：80]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.039393s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_spec',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/store/admin_spec/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001209s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001029s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminSpecController->edit[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminSpecController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_spec/edit.html [ array (
+  0 => 'admin',
+  1 => 'types',
+  2 => 'spec',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007541s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019315s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006803s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020754s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007859s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_spec` [ RunTime:0.018932s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.006394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_spec_item` [ RunTime:0.018561s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec_item` WHERE  `spec_id` = 6 [ RunTime:0.006051s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_type` [ RunTime:0.018948s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_type` [ RunTime:0.005880s ]
+---------------------------------------------------------------
+[ 2018-01-23T17:59:33+08:00 ] 127.0.0.1 GET /store/admin_spec/index.html
+[ info ] storeapp.com/store/admin_spec/index.html [运行时间：0.179321s][吞吐率：5.58req/s] [内存消耗：3,283.99kb] [文件加载：79]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.042291s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_spec',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/store/admin_spec/edit/id/6.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001450s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.000999s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminSpecController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminSpecController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_spec/index.html [ array (
+  0 => 'admin',
+  1 => 'specs',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009152s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.018777s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.008199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020865s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007318s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_spec` [ RunTime:0.020029s ]
+[ sql ] [ SQL ] SELECT `SpecModel`.* FROM `cmf_spec` `SpecModel` INNER JOIN `cmf_spec_item` `SpecItemModel` ON `SpecModel`.`id`=`SpecItemModel`.`spec_id` GROUP BY `SpecItemModel`.`spec_id` HAVING count(*)>0 ORDER BY list_order asc, id desc [ RunTime:0.007049s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_spec_item` [ RunTime:0.018390s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec_item` WHERE  `spec_id` = 7 [ RunTime:0.006638s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec_item` WHERE  `spec_id` = 6 [ RunTime:0.006394s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_spec_item` WHERE  `spec_id` = 5 [ RunTime:0.006969s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:57:47+08:00 ] 127.0.0.1 GET /store/admin_product/index.html
+[ info ] storeapp.com/store/admin_product/index.html [运行时间：0.334642s][吞吐率：2.99req/s] [内存消耗：3,412.42kb] [文件加载：84]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.066593s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004584s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.005877s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product/index.html [ array (
+  0 => 'admin',
+  1 => 'products',
+  2 => 'cur_category',
+  3 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016093s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.021352s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.007256s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020186s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product` [ RunTime:0.019998s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.005285s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product` WHERE  `delete_time` = 0 ORDER BY list_order asc, id desc LIMIT 0,20 [ RunTime:0.006835s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_category` [ RunTime:0.020648s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` WHERE  `id` IN (1,2,3) [ RunTime:0.006565s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` [ RunTime:0.006018s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_option` [ RunTime:0.023950s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `cmf_option` WHERE  `option_name` = 'storage' LIMIT 1 [ RunTime:0.006248s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:57:49+08:00 ] 127.0.0.1 GET /store/admin_product_category/index.html
+[ info ] storeapp.com/store/admin_product_category/index.html [运行时间：0.144862s][吞吐率：6.90req/s] [内存消耗：3,191.21kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.041216s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_category',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001131s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001344s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductCategoryController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductCategoryController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_category/index.html [ array (
+  0 => 'admin',
+  1 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007615s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019631s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.007113s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020915s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_category` [ RunTime:0.020341s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_category` WHERE  `delete_time` = 0 [ RunTime:0.005694s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:57:54+08:00 ] 127.0.0.1 GET /store/admin_product_order/index.html
+[ info ] storeapp.com/store/admin_product_order/index.html [运行时间：0.189237s][吞吐率：5.28req/s] [内存消耗：3,284.58kb] [文件加载：78]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.049552s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001313s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001118s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductOrderController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductOrderController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_order/index.html [ array (
+  0 => 'admin',
+  1 => 'current_status',
+  2 => 'orders',
+  3 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007636s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.028255s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020094s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006771s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.020760s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `status` = 1 [ RunTime:0.006832s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product_order` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006015s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.007281s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006123s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006051s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.005721s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.005778s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:57:55+08:00 ] 127.0.0.1 GET /store/admin_product_order/detail/id/3.html
+[ info ] storeapp.com/store/admin_product_order/detail/id/3.html [运行时间：0.160606s][吞吐率：6.23req/s] [内存消耗：3,219.18kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.046961s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_order',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001140s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.000971s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductOrderController->detail[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductOrderController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_order/detail.html [ array (
+  0 => 'admin',
+  1 => 'detail',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008970s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019862s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.005081s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.020091s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006918s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.020384s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.007873s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006409s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.004818s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:58:52+08:00 ] 127.0.0.1 GET /store/admin_product_order/index.html
+[ info ] storeapp.com/store/admin_product_order/index.html [运行时间：0.249557s][吞吐率：4.01req/s] [内存消耗：3,284.58kb] [文件加载：78]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.052421s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004819s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.004925s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductOrderController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductOrderController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_order/index.html [ array (
+  0 => 'admin',
+  1 => 'current_status',
+  2 => 'orders',
+  3 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008757s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019599s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006864s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.021518s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.008787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.020160s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `status` = 1 [ RunTime:0.009122s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product_order` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006417s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.007575s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006151s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.005740s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.005771s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006992s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:58:53+08:00 ] 127.0.0.1 GET /store/admin_delivery/index.html
+[ info ] storeapp.com/store/admin_delivery/index.html [运行时间：0.178093s][吞吐率：5.62req/s] [内存消耗：3,363.37kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.039639s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_delivery',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001178s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001165s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminDeliveryController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminDeliveryController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_delivery/index.html [ array (
+  0 => 'admin',
+  1 => 'delivery',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007749s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.018929s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006158s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.019841s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006820s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_delivery_doc` [ RunTime:0.020275s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_delivery_doc` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.004938s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_delivery_doc` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.006603s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.020405s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `id` IN (3) [ RunTime:0.007112s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:58:55+08:00 ] 127.0.0.1 GET /store/admin_delivery/send/id/3.html
+[ info ] storeapp.com/store/admin_delivery/send/id/3.html [运行时间：0.209940s][吞吐率：4.76req/s] [内存消耗：3,324.36kb] [文件加载：81]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.049836s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_delivery',
+    2 => 'send',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001236s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001080s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminDeliveryController->send[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminDeliveryController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_delivery/send.html [ array (
+  0 => 'admin',
+  1 => 'shippings',
+  2 => 'delivery',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009794s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.020163s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.006608s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.021943s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007269s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_delivery_doc` [ RunTime:0.020377s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_delivery_doc` WHERE  `order_id` = 3 ORDER BY id desc LIMIT 1 [ RunTime:0.006699s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.021306s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `id` = 3 [ RunTime:0.006984s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_shipping` [ RunTime:0.019877s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_shipping` [ RunTime:0.005924s ]
+---------------------------------------------------------------
+[ 2018-01-23T19:59:06+08:00 ] 127.0.0.1 GET /store/admin_product_order/index.html
+[ info ] storeapp.com/store/admin_product_order/index.html [运行时间：0.202454s][吞吐率：4.94req/s] [内存消耗：3,284.58kb] [文件加载：78]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.043608s ]
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/simplewind/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'store',
+    1 => 'admin_product_order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'storeapp.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://storeapp.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|4; thinkphp_show_page_trace=0|0; PHPSESSID=1hg6fs99r37bl69o3pe3j407c2; admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../simplewind/cmf/lang/zh-cn.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/common.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/portal/lang/zh-cn/common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.001384s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/admin/lang/zh-cn/admin.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../app/user/lang/zh-cn/admin_menu.php
+[ info ] [ LANG ] /Users/zhangshibiao/code/php/storeapp/public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.001835s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\store\controller\AdminProductOrderController->index[ /Users/zhangshibiao/code/php/storeapp/app/store/controller/AdminProductOrderController.php ]
+[ info ] [ VIEW ] themes/admin_simpleboot3/store/admin_product_order/index.html [ array (
+  0 => 'admin',
+  1 => 'current_status',
+  2 => 'orders',
+  3 => 'status',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008584s ] mysql:host=192.168.1.25;port=3306;dbname=store;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_hook_plugin` [ RunTime:0.019801s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `cmf_hook_plugin` WHERE  `status` = 1 ORDER BY list_order ASC [ RunTime:0.007053s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_user` [ RunTime:0.021186s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.008391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cmf_product_order` [ RunTime:0.019287s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `status` = 1 [ RunTime:0.006435s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cmf_product_order` WHERE  `delete_time` = 0 LIMIT 1 [ RunTime:0.006263s ]
+[ sql ] [ SQL ] SELECT * FROM `cmf_product_order` WHERE  `delete_time` = 0 ORDER BY id desc LIMIT 0,20 [ RunTime:0.007204s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.006207s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.004963s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.005681s ]
+[ sql ] [ SQL ] SELECT `mobile`,`user_nickname` FROM `cmf_user` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.005404s ]
