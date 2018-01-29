@@ -69,7 +69,17 @@
                 <tr>
                     <th width="100">发票信息</th>
                     <td colspan="7">
-                        xxxxx
+                        <if condition="$detail.invoice_info.needInvoice eq 0">
+                            不需要发票
+                            <else/>
+                            发票类型：<if condition="$detail.invoice_info.invoiceInfo.type eq 0">单位票<else/>个人票</if>({$detail.invoice_info.invType})<br/>
+                            发票抬头：{$detail.invoice_info.invoiceInfo.title}<br/>
+                            抬头税号:  {$detail.invoice_info.invoiceInfo.taxNumber}<br/>
+                            单位地址:  {$detail.invoice_info.invoiceInfo.companyAddress}<br/>
+                            手机号码:  {$detail.invoice_info.invoiceInfo.telephone}<br/>
+                            银行名称:  {$detail.invoice_info.invoiceInfo.bankName}<br/>
+                            银行账号:  {$detail.invoice_info.invoiceInfo.bankAccount}<br/>
+                        </if>
                     </td>
                 </tr>
                 <tr>
