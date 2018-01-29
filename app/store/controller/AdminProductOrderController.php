@@ -73,7 +73,7 @@ class AdminProductOrderController extends AdminBaseController
 
     public function checkOrderStatus()
     {
-        $data = ProductOrderModel::where('status', 1)->select();
+        $data = ProductOrderModel::where('status', 0)->select();
         foreach ($data as $k=>$v){
             if (time() - $v['create_time'] > 7200){
                 ProductOrderModel::where('id', $v['id'])->update(['status'=>5]);//设为过期
