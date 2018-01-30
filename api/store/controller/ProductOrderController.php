@@ -131,9 +131,9 @@ class ProductOrderController extends RestBaseController
     /**
      * 根据订单号获取物流信息
      */
-    public function getExpressById($order_id)
+    public function getExpressById($id)
     {
-        $express = DeliveryModel::where('order_sn',$order_id)->find();dump($express);
+        $express = DeliveryModel::where('order_id',$id)->find();
         if ($express){
             $data = $this->getExpressByCode($express['invoice_no'],$express['shipping_code']);
             if ($data['status'] == 0){
@@ -169,7 +169,7 @@ class ProductOrderController extends RestBaseController
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($curl, CURLOPT_FAILONERROR, false);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HEADER, true);
+        curl_setopt($curl, CURLOPT_HEADER, false);
         if (1 == strpos("$".$host, "https://"))
         {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
