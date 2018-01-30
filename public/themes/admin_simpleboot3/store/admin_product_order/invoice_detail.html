@@ -1,0 +1,139 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th width="100">发票ID</th>
+                    <td>
+                        {$detail.invoice_id}
+                    </td>
+                    <th width="120">订单号</th>
+                    <td>
+                        {$detail.product_order_no}
+                    </td>
+                    <th width="100">下单人</th>
+                    <td>
+                        <i class="fa fa-user"></i>:{$detail.user_nickname}<br/>
+                        <i class="fa fa-mobile"></i>:{$detail.mobile}
+                    </td>
+                    <th width="100">发票金额</th>
+                    <td>
+                        ￥{$detail.total_price}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">订单状态</th>
+                    <td>
+                        <switch name="detail['ostu']">
+                            <case value="0"><span style="color:red;">未支付</span></case>
+                            <case value="1"><span style="color: red;">已支付待确认</span></case>
+                            <case value="2"><span style="color: green;">已确认</span></case>
+                            <case value="3"><span style="color: green;">已发货</span></case>
+                            <case value="4"><span style="color: red;">已支付，但库存不足</span></case>
+                            <case value="5"><span style="color: red;">已关闭（支付超时）</span></case>
+                            <case value="6"><span style="color: green;">已确认收货,待评价</span></case>
+                            <case value="7"><span style="color: green;">已完成</span></case>
+
+                        </switch>
+                    </td>
+                    <th width="100">发票状态</th>
+                    <td>
+                        <switch name="detail['status']">
+                            <case value="0"><span style="color:red;">待开票</span></case>
+                            <case value="1"><span style="color: green;">已开票</span></case>
+                            <case value="2">已作废</case>
+                        </switch>
+                    </td>
+                    <th width="120">购买商品数</th>
+                    <td>
+                        {$detail.total_count}
+                    </td>
+                    <th width="100">发票创建时间</th>
+                    <td>
+                        {$detail.atime|date="Y-m-d H:i:s",###}
+                    </td>
+                </tr>
+
+                <tr>
+                    <th width="100">开票/作废时间</th>
+                    <td colspan="7">
+                        {$detail.ctime|date="Y-m-d H:i:s",###}
+                    </td>
+                </tr>
+                <tr>
+                    <th width="100">发票信息</th>
+                    <td colspan="7">
+
+                            发票类型：<if condition="$detail.invoice_type eq 0">单位票<else/>个人票</if>({$detail.invoice_name})<br/>
+                            发票抬头：{$detail.invoice_title}<br/>
+                            抬头税号:  {$detail.taxpayer}<br/>
+                            单位地址:  {$detail.address}<br/>
+                            单位电话:  {$detail.phone}<br/>
+                            开户银行:  {$detail.bank}<br/>
+                            银行账号:  {$detail.bank_no}<br/>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+    <table class="table table-hover table-bordered table-list">
+        <thead>
+        <tr>
+            <th width="200">商品id</th>
+            <th width="200">商品名称</th>
+            <th width="200">购买个数</th>
+            <th width="50">价格</th>
+        </tr>
+        </thead>
+        <php>$detail['snap_items']= json_decode($detail['snap_items'],true);</php>
+            <foreach name="$detail.snap_items" item="vo">
+            <tr>
+                <td>
+                    {$vo.id}
+                </td>
+                <td>
+                    {$vo.title}
+                </td>
+                <td>
+                    {$vo.counts}
+                </td>
+                <td>
+                    ￥{$vo.totalPrice}
+                </td>
+
+            </tr>
+            </foreach>
+
+
+    </table>
+
+        <div class="form-group text-center">
+        <if condition="$detail.status eq 0 ">
+            <form class="js-ajax-form" action="{:url('AdminProductOrder/invoice_do',array('id'=>$detail['invoice_id'],'type'=>1))}" method="post">
+                <button type="submit" class="btn btn-primary js-ajax-submit">确认开票</button>
+            </form>
+        </if>
+            <br/>
+                <form class="js-ajax-form" action="{:url('AdminProductOrder/invoice_do',array('id'=>$detail['invoice_id'],'type'=>2))}" method="post">
+                    <button type="submit" class="btn btn-primary js-ajax-submit">作废此票</button>
+                </form>
+
+
+
+        </div>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+
+
+</body>
+</html>

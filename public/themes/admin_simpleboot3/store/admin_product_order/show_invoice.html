@@ -1,0 +1,80 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">所有发票</a></li>
+    </ul>
+
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>下单人</th>
+                <th>单号</th>
+                <th>发票类型</th>
+                <th width="130">发票金额</th>
+                <th width="130">发票状态</th>
+                <th width="220">创建时间</th>
+                <th width="100">操作</th>
+            </tr>
+            </thead>
+            <foreach name="data" item="vo">
+                <tr>
+                    <td>{$vo.invoice_id}</td>
+                    <td>
+                        {$vo.user_nickname}
+                    </td>
+                    <td>
+                        {$vo.product_order_no}
+                    </td>
+                    <td>
+                        <if condition="$vo.invoice_type eq 0">单位票<else/>个人票</if>({$vo.invoice_name})
+                    </td>
+
+                    <td>
+                        {$vo.total_price}
+                    </td>
+                    <td>
+
+                        <switch name="vo['status']">
+                            <case value="0"><span style="color:red;">待开票</span></case>
+                            <case value="1"><span style="color: green;">已开票</span></case>
+                            <case value="2">已作废</case>
+                        </switch>
+                    </td>
+                    <td>
+                        {$vo.atime|date="Y-m-d H:i:s",###}
+                    </td>
+                    <td>
+                        <a href="javascript:parent.openIframeLayer('{:url("AdminProductOrder/invoice_detail",array("id"=>$vo["invoice_id"]))}','发票详情')">查看</a>
+                    </td>
+                </tr>
+            </foreach>
+            <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>下单人</th>
+                <th>单号</th>
+                <th>发票类型</th>
+                <th width="130">发票金额</th>
+                <th width="130">发票状态</th>
+                <th width="220">创建时间</th>
+                <th width="100">操作</th>
+            </tr>
+            </tfoot>
+        </table>
+
+        <ul class="pagination">{$data->render()|default=''}</ul>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    function reloadPage(win) {
+        win.location.reload();
+    }
+
+
+</script>
+</body>
+</html>

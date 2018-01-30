@@ -14,6 +14,7 @@ use app\store\model\ProductOrderModel;
 use app\store\model\ShippingModel;
 use cmf\controller\AdminBaseController;
 use think\Db;
+use think\Request;
 
 /**
  * Class AdminProductOrderController 订单管理
@@ -160,18 +161,19 @@ class AdminProductOrderController extends AdminBaseController
         //更新发票表  start by lîjiâxiâng
         $invoice['order_id'] = $shipping['order_id'];//订单ID
         $invoice['user_id'] = $shipping['user_id'];//用户ID
-        $invoice['invoice_money'] = $shipping['shipping_price'];//发票金额
         unset($shipping);//销毁大数组
         //获取订单的发票详情 && 赋值给新数组
         $detail = $this -> _get_detail($invoice['order_id']);
-        $invoice['invoice_type'] = $detail['invoice_info']['invoiceInfo']['type'];//发票类型
+        $invoice['invoice_type'] = $detail['invoice_info']['invoiceInfo']['type'];//开票者类型
+        $invoice['invoice_name'] = $detail['invoice_info']['invType'];//发票类型名
         $invoice['invoice_title'] = $detail['invoice_info']['invoiceInfo']['title'];//发票抬头
         $invoice['taxpayer'] = $detail['invoice_info']['invoiceInfo']['taxNumber'];//纳税人识别号
         $invoice['bank'] = $detail['invoice_info']['invoiceInfo']['bankName'];//银行名称
         $invoice['bank_no'] = $detail['invoice_info']['invoiceInfo']['bankAccount'];//银行账号
         $invoice['phone'] = $detail['invoice_info']['invoiceInfo']['telephone'];//固定场所手机号
         $invoice['address'] = $detail['invoice_info']['invoiceInfo']['companyAddress'];//固定场所地址
-        $invoice['atime'] = date('Y-m-d H:i:s',time());//创建时间
+        $invoice['invoice_money'] = $detail['total_price'];//发票金额
+        $invoice['atime'] = time();//创建时间
         unset($detail);//销毁大数组
         //入库
         Db::name('invoice') -> insert($invoice);
@@ -268,4 +270,62 @@ class AdminProductOrderController extends AdminBaseController
     {
 
     }
+
+    #——————————————————————————————————————————— 发票模块 Begin By lijixiang ———————————————————————————————————————————#
+
+    /**
+     * 查看全部发票信息
+     * @return mixed
+     */
+    public function show_invoice()
+    {
+        //获取信息
+        $data = Db::name('invoice') -> alias('i')
+            -> field('i.invoice_id,invoice_name,i.order_id,invoice_type,i.user_id,i.invoice_title,atime,i.status,o.product_order_no,u.user_nickname,o.total_price')
+            -> join('product_order o','o.id = i.order_id','left')
+            -> join('user u','u.id = i.user_id','left')
+            -> order('atime','desc')
+            -> paginate(15);
+
+        $this -> assign('data',$data);
+        return $this -> fetch();
+
+    }
+
+    /**
+     * 查看详情
+     * @return mixed
+     */
+    public function invoice_detail()
+    {
+        $id = Request::instance()->param('id');
+        $detail = Db::name('invoice') -> alias('i')
+            -> field('invoice_id,product_order_no,user_nickname,mobile,total_price,total_count,atime,ctime,invoice_title,taxpayer,address,phone,bank,bank_no,invoice_type,invoice_name,snap_items,i.status,o.status ostu')
+            -> join('product_order o','o.id = i.order_id','left')
+            -> join('user u','u.id = i.user_id','left')
+            -> where('invoice_id',$id)
+            -> find();
+       // dump($detail);die;
+        $this -> assign('detail',$detail);
+        return $this -> fetch();
+    }
+
+    public function invoice_do()
+    {
+        $param  = Request::instance()->param();
+            $stu = $param['type']==1?1:2;
+            $stu = Db::name('invoice')
+                -> where('invoice_id',$param['id'])
+                -> update(array('status'=>$stu,'ctime'=>time()));
+            if ($stu)
+            {
+                $this -> success('成功');
+            }else{
+                $this -> error('失败');
+            }
+
+
+    }
+
+    #——————————————————————————————————————————— 发票模块 End   By lijixiang ———————————————————————————————————————————#
 }
