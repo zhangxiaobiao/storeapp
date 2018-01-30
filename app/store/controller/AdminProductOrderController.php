@@ -277,16 +277,42 @@ class AdminProductOrderController extends AdminBaseController
      * 查看全部发票信息
      * @return mixed
      */
-    public function show_invoice()
+    public function show_invoice(Request $request)
     {
+        $type = array(0=>'待开票',1=>'已开票',2=>'已作废');
+        $where = '';
+        //如果带了查询条件
+        if ($request -> isPost())
+        {
+            $param = $request->param();
+            if ($param['product_order_no']!=''){
+                $where .= "o.product_order_no = '".$param['product_order_no']."' and ";
+            }
+            if ($param['status']!=100)
+            {
+                $where .= "i.status = '".$param['status']."'";
+                $select_type = $param['status'];
+            }else{
+                $where .='1';
+            }
+
+            //echo $where;die;
+            $this -> assign('product_order_no',$param['product_order_no']);
+        }
+
+
         //获取信息
         $data = Db::name('invoice') -> alias('i')
             -> field('i.invoice_id,invoice_name,i.order_id,invoice_type,i.user_id,i.invoice_title,atime,i.status,o.product_order_no,u.user_nickname,o.total_price')
             -> join('product_order o','o.id = i.order_id','left')
             -> join('user u','u.id = i.user_id','left')
+            -> where($where)
             -> order('atime','desc')
             -> paginate(15);
 
+        $select_type = isset($select_type)?$select_type:'';
+        $this -> assign('type',$type);
+        $this -> assign('select_type',$select_type);
         $this -> assign('data',$data);
         return $this -> fetch();
 
@@ -300,7 +326,7 @@ class AdminProductOrderController extends AdminBaseController
     {
         $id = Request::instance()->param('id');
         $detail = Db::name('invoice') -> alias('i')
-            -> field('invoice_id,product_order_no,user_nickname,mobile,total_price,total_count,atime,ctime,invoice_title,taxpayer,address,phone,bank,bank_no,invoice_type,invoice_name,snap_items,i.status,o.status ostu')
+            -> field('invoice_id,product_order_no,user_nickname,mobile,total_price,total_count,atime,ctime,invoice_title,taxpayer,address,phone,bank,bank_no,invoice_type,invoice_name,snap_items,i.status,o.status ostu,snap_address')
             -> join('product_order o','o.id = i.order_id','left')
             -> join('user u','u.id = i.user_id','left')
             -> where('invoice_id',$id)
@@ -310,6 +336,9 @@ class AdminProductOrderController extends AdminBaseController
         return $this -> fetch();
     }
 
+    /**
+     * 作废&&开票动作
+     */
     public function invoice_do()
     {
         $param  = Request::instance()->param();

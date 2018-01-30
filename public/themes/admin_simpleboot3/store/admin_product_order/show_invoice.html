@@ -6,6 +6,23 @@
         <li class="active"><a href="javascript:;">所有发票</a></li>
     </ul>
 
+    <form class="well form-inline margin-top-20" method="post" action="{:url('AdminProductOrder/show_invoice')}">
+        订单号:
+        <input type="text" class="form-control" name="product_order_no" style="width: 200px;"
+               value="{$product_order_no|default=''}" placeholder="请输入订单号...">
+        发票状态:
+        <select class="form-control" name="status" style="width: 140px;">
+            <option value='100'>全部</option>
+            <php>$k=0;</php>
+            <volist name="type" id="vo">
+                <option <if condition="$select_type eq $k">selected=selected</if> value="{$k}">{$vo}</option>
+                <php>$k++;</php>
+            </volist>
+        </select>
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('AdminProductOrder/show_invoice')}">清空</a>
+    </form>
+
         <table class="table table-hover table-bordered table-list">
             <thead>
             <tr>

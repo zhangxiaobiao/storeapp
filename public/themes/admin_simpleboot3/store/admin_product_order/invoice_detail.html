@@ -10,6 +10,8 @@
     <div class="row">
         <div class="col-md-12">
             <table class="table table-bordered">
+
+
                 <tr>
                     <th width="100">发票ID</th>
                     <td>
@@ -81,6 +83,23 @@
                             银行账号:  {$detail.bank_no}<br/>
                     </td>
                 </tr>
+                <php>$detail['snap_items']= json_decode($detail['snap_items'],true);$detail['snap_address']=json_decode($detail['snap_address'],true);</php>
+
+                <tr>
+                    <th width="100">收货人姓名：</th>
+                    <td>
+                        {$detail.snap_address.name}
+                    </td>
+                    <th width="120">收货人地址</th>
+                    <td>
+                        {$detail.snap_address.address}
+                    </td>
+                    <th width="100">收货人电话</th>
+                    <td>
+                        <i class="fa fa-mobile"></i>:{$detail.snap_address.tel}
+                    </td>
+
+                </tr>
             </table>
 
         </div>
@@ -95,7 +114,6 @@
             <th width="50">价格</th>
         </tr>
         </thead>
-        <php>$detail['snap_items']= json_decode($detail['snap_items'],true);</php>
             <foreach name="$detail.snap_items" item="vo">
             <tr>
                 <td>
