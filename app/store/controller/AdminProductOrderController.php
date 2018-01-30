@@ -13,6 +13,7 @@ use app\store\model\DeliveryModel;
 use app\store\model\ProductOrderModel;
 use app\store\model\ShippingModel;
 use cmf\controller\AdminBaseController;
+use think\Db;
 
 /**
  * Class AdminProductOrderController 订单管理
@@ -96,10 +97,26 @@ class AdminProductOrderController extends AdminBaseController
      */
     public function detail($id)
     {
-        $detail = ProductOrderModel::where('id', $id)->find();
-        $detail['invoice_info'] = json_decode($detail['invoice_info'],true);
+        #——————————————————————————————————————————————————————————————————————————————#
+//        $detail = ProductOrderModel::where('id', $id)->find();
+//        $detail['invoice_info'] = json_decode($detail['invoice_info'],true);
+        $detail = $this -> _get_detail($id);
+        #——————————————————————————————————————————————————————————————————————————————#
         $this->assign('detail', $detail);
         return $this->fetch();
+    }
+
+    /**
+     * 获取订单详情
+     * by lijiaxiang
+     * @param $id
+     * @return array|false|\PDOStatement|string|\think\Model
+     */
+    private function _get_detail($id)
+    {
+        $detail = ProductOrderModel::where('id', $id)->find();
+        $detail['invoice_info'] = json_decode($detail['invoice_info'],true);
+        return $detail;
     }
 
     /**
@@ -119,7 +136,7 @@ class AdminProductOrderController extends AdminBaseController
     {
         $post = $this->request->param();
         $order = ProductOrderModel::get($post['id']);
-        $order->admin_note = $post['admin_note'];
+        $order->admin_note = key_exists('admin_note',$post)?$post['admin_note']:'';
         $order->status = 2;
         $order->save();
 
@@ -138,11 +155,27 @@ class AdminProductOrderController extends AdminBaseController
         $shipping['mobile'] = $address['tel'];
         $shipping['address'] = $address['address'];
         $shipping['shipping_price'] = $order->shipping_price;
-
         DeliveryModel::create($shipping);
-        //更新发票表
-        //todo
 
+        //更新发票表  start by lîjiâxiâng
+        $invoice['order_id'] = $shipping['order_id'];//订单ID
+        $invoice['user_id'] = $shipping['user_id'];//用户ID
+        $invoice['invoice_money'] = $shipping['shipping_price'];//发票金额
+        unset($shipping);//销毁大数组
+        //获取订单的发票详情 && 赋值给新数组
+        $detail = $this -> _get_detail($invoice['order_id']);
+        $invoice['invoice_type'] = $detail['invoice_info']['invoiceInfo']['type'];//发票类型
+        $invoice['invoice_title'] = $detail['invoice_info']['invoiceInfo']['title'];//发票抬头
+        $invoice['taxpayer'] = $detail['invoice_info']['invoiceInfo']['taxNumber'];//纳税人识别号
+        $invoice['bank'] = $detail['invoice_info']['invoiceInfo']['bankName'];//银行名称
+        $invoice['bank_no'] = $detail['invoice_info']['invoiceInfo']['bankAccount'];//银行账号
+        $invoice['phone'] = $detail['invoice_info']['invoiceInfo']['telephone'];//固定场所手机号
+        $invoice['address'] = $detail['invoice_info']['invoiceInfo']['companyAddress'];//固定场所地址
+        $invoice['atime'] = date('Y-m-d H:i:s',time());//创建时间
+        unset($detail);//销毁大数组
+        //入库
+        Db::name('invoice') -> insert($invoice);
+        //更新发票 end by lîjiâxiâng
         $rs = true;
         if ($rs){
             $this->success('确认订单成功!', url('AdminProductOrder/index'));
