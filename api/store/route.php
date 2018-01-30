@@ -31,11 +31,17 @@ Route::rule('store/verifytoken', 'store/token/verifyActoken');
 Route::post('store/order', 'store/productOrder/pleaceOrder');
 //获取订单列表
 Route::get('order/by_user/[:type]', 'store/productOrder/getSummarySByUser');
-//获取个分类订单数量
+//获取 分类订单数量
 Route::get('order/order_num', 'store/productOrder/statusNum');
 //获取订单详情
 Route::get('store/order/:id', 'store/productOrder/getDetail',[],['id'=>'\d+']);
 //获取预订单
 Route::post('store/pre_order', 'store/pay/getPreOrder');
+//确认收货
+Route::get('order/affirm/:id', 'store/productOrder/affirmGoods');
+
+//查看物流
+Route::get('order/express/:order_id','store/productOrder/getExpressById');
+
 //微信回调的api地址
 Route::post('store/notify', 'store/payReceive/receiveNotify');

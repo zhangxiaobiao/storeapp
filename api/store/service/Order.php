@@ -165,7 +165,7 @@ class Order extends RestBaseController
     {
         $status = [
             'pass' => true,
-            'orderPrice' => 0,
+            'orderPrice' => $this->getShippingPrice($this->products),
             'totalCount' => 0,
             'spec' => '',
             'pStatusArray' => []

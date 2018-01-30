@@ -44,6 +44,14 @@ class ProductOrderModel extends Model
         return json_decode($value);
     }
 
+    public function getInvoiceInfoAttr($value)
+    {
+        if (empty($value)){
+            return null;
+        }
+        return json_decode($value);
+    }
+
     public function getCreateTimeAttr($value)
     {
         return date("Y-m-d H:i:s", $value);

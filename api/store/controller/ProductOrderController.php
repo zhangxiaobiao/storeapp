@@ -9,7 +9,9 @@
 namespace api\store\controller;
 
 
+use api\lib\enum\OrderStatusEnum;
 use api\store\model\ProductOrderModel;
+use app\store\model\DeliveryModel;
 use cmf\controller\RestBaseController;
 use cmf\controller\RestUserBaseController;
 use api\store\service\Order as OrderService;
@@ -46,7 +48,7 @@ class ProductOrderController extends RestBaseController
                 'current_page' => $pagingOrders->getCurrentPage()
             ];
         }
-        $data = $pagingOrders->hidden(['prepay_id','snap_items','snap_address'])->toArray();
+        $data = $pagingOrders->hidden(['prepay_id','snap_address','invoice_info'])->toArray();
 
         return [
             'data'=>$data,
@@ -107,6 +109,75 @@ class ProductOrderController extends RestBaseController
         return $status;
     }
 
+    /**
+     * 确认收货
+     */
+    public function affirmGoods($id){
+        $data = $this->request->param();
+        $rs = $this->validate($data, 'IDMustBePostiveInt');
+        if (!$rs){
+            $this->error($rs);
+        }
+        $this->success('确认收货成功！',OrderStatusEnum::AFFIRM_GOODS);
+        $orderDetail = ProductOrderModel::get($id);
+        $orderDetail->status = OrderStatusEnum::AFFIRM_GOODS;
+        if ($orderDetail->save()){
+            $this->success('确认收货成功！',OrderStatusEnum::AFFIRM_GOODS);
+        } else {
+            $this->error('确认失败！');
+        }
+    }
+
+    /**
+     * 根据订单号获取物流信息
+     */
+    public function getExpressById($order_id)
+    {
+        $express = DeliveryModel::where('order_sn',$order_id)->find();dump($express);
+        if ($express){
+            $data = $this->getExpressByCode($express['invoice_no'],$express['shipping_code']);
+            if ($data['status'] == 0){
+                $this->success($data['msg'],$data['result']);
+            } else {
+                $this->error($data['msg'],$data['result']);
+            }
+
+        } else {
+            $this->error('此产品包邮,无物流信息');
+        }
+    }
+
+
+    /**
+     * 接口获取物流信息
+     */
+    public function getExpressByCode($code,$name)
+    {
+        $host = "https://wuliu.market.alicloudapi.com";
+        $path = "/kdi";
+        $method = "GET";
+        $appcode = "fd81db4673c844aeaca67eda520b3ca3";
+        $headers = array();
+        array_push($headers, "Authorization:APPCODE " . $appcode);
+        $querys = "no=$code&type=$name";
+        $bodys = "";
+        $url = $host . $path . "?" . $querys;
+
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($curl, CURLOPT_FAILONERROR, false);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, true);
+        if (1 == strpos("$".$host, "https://"))
+        {
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        }
+        $data = curl_exec($curl);
+        return json_decode($data,true);
+    }
 
 
 
