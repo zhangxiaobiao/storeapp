@@ -56,4 +56,16 @@ class ProductOrderModel extends Model
     {
         return date("Y-m-d H:i:s", $value);
     }
+
+    public function getPayTimeAttr($value)
+    {
+        return date("Y-m-d H:i:s", $value);
+    }
+
+    public function getSendTimeAttr($value)
+    {
+        return date("Y-m-d H:i:s", $value);
+    }
+
+
 }

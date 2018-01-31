@@ -86,7 +86,7 @@ class VerificationCodeController extends RestBaseController
             if (!empty($result['error'])) {
                 $this->error($result['message']);
             } else {
-                $this->success('发送成功!'.$code);
+                $this->success('发送成功!');
             }
 
         }

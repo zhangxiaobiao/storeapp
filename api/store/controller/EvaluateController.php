@@ -9,8 +9,10 @@
 namespace api\store\controller;
 
 
+use api\lib\enum\OrderStatusEnum;
 use api\store\model\EvaluateModel;
-use app\store\model\ProductOrderProductModel;
+use api\store\model\ProductOrderModel;
+use api\store\model\ProductOrderProductModel;
 use cmf\controller\RestBaseController;
 
 class EvaluateController extends RestBaseController
@@ -35,6 +37,7 @@ class EvaluateController extends RestBaseController
         $post['message'] = $data['message'];
         $result = EvaluateModel::create($post);
         if ($result){
+            ProductOrderModel::update(['id'=>$data['id'],'status'=>OrderStatusEnum::DONE]);
             $this->success('我们已经收到您的评价');
         } else {
             $this->error('提交失败,请稍后再试');

@@ -81,7 +81,7 @@ class MobileCodeDemoPlugin extends Plugin
     }
 
     public function test1($mobile,$code){
-        $apikey = ""; //修改为您的apikey(https://www.yunpian.com)登录官网后获取
+        $apikey = "4094d66bedf5ef7cb3134b4da6c12a0e"; //修改为您的apikey(https://www.yunpian.com)登录官网后获取
         $text="【云片网】您的验证码是1234";
         $ch = curl_init();
 
@@ -111,7 +111,7 @@ class MobileCodeDemoPlugin extends Plugin
 // 发送模板短信
 // 需要对value进行编码
         $data = array(
-            'tpl_id' => '2108578',
+            'tpl_id' => '1424401',
             'tpl_value' => ('#code#').'='.urlencode($code),
             'apikey' => $apikey,
             'mobile' => $mobile

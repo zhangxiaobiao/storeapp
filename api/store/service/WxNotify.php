@@ -28,7 +28,7 @@ class WxNotify extends \WxPayNotify
             Db::startTrans();
             try{
                 $order = ProductOrderModel::where('product_order_no', $orderNo)->lock(true)->find();
-                if ($order->status == 1){
+                if ($order->status == 0){
                     $service = new OrderService();
                     $stockStatus = $service->checkOrderStock($order->id);
                     if ($stockStatus['pass']){

@@ -6,5 +6,5 @@
  * Time: 下午10:42
  */
 return [
-    'pay_back_url' => 'http://littleapp.com/api/store/notify'
+    'pay_back_url' => 'https://shop.aotuedu.com/api/store/notify'
 ];

@@ -20,7 +20,7 @@ class PayReceiveController
     public function receiveNotify()
     {
         $xml = file_get_contents('php://input');
-        file_put_contents("test.txt", $xml, FILE_APPEND);
+//        file_put_contents("test.txt", $xml, FILE_APPEND);
         //检测库存量
         //更新订单的status状态
         //减库存
