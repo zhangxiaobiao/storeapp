@@ -43,5 +43,8 @@ Route::get('order/affirm/:id', 'store/productOrder/affirmGoods');
 //查看物流
 Route::get('order/express/:id','store/productOrder/getExpressById');
 
+//评价
+Route::post('order/prise','store/evaluate/prise');
+
 //微信回调的api地址
 Route::post('store/notify', 'store/payReceive/receiveNotify');
