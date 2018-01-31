@@ -293,13 +293,12 @@ class AdminProductOrderController extends AdminBaseController
                 $where .= "i.status = '".$param['status']."'";
                 $select_type = $param['status'];
             }else{
-                $where .='1';
+                $where .='1 = 1';
             }
 
             //echo $where;die;
             $this -> assign('product_order_no',$param['product_order_no']);
         }
-
 
         //获取信息
         $data = Db::name('invoice') -> alias('i')
@@ -310,7 +309,7 @@ class AdminProductOrderController extends AdminBaseController
             -> order('atime','desc')
             -> paginate(15);
 
-        $select_type = isset($select_type)?$select_type:'';
+        $select_type = isset($select_type)?$select_type:'1000';
         $this -> assign('type',$type);
         $this -> assign('select_type',$select_type);
         $this -> assign('data',$data);
