@@ -115,7 +115,7 @@ class AdminProductOrderController extends AdminBaseController
      */
     private function _get_detail($id)
     {
-        $detail = ProductOrderModel::where('id', $id)->find();
+        $detail = ProductOrderModel::with('orderPrice')->where('id', $id)->find();
         $detail['invoice_info'] = json_decode($detail['invoice_info'],true);
         return $detail;
     }

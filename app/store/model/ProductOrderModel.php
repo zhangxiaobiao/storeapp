@@ -27,7 +27,7 @@ class ProductOrderModel extends Model
             5=>'已关闭（支付超时）',
             6=>'已确认收货,待评价',
             7=>'已完成'
-        ];;
+        ];
     }
 
     public function getUserIdAttr($value)
@@ -82,6 +82,11 @@ class ProductOrderModel extends Model
     public function getDetail()
     {
         return $this->hasMany('ProductOrderProductModel', 'order_id', 'id');
+    }
+
+    public function orderPrice()
+    {
+        return $this -> hasOne('EvaluateModel','order_id','id');
     }
 
 }

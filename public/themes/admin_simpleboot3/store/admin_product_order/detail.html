@@ -67,6 +67,15 @@
                     </td>
                 </tr>
                 <tr>
+                    <th width="100">用户评价</th>
+                    <td colspan="7">
+                        评分：{$detail.order_price.star|default="用户暂未评分"}
+                        <br/>
+                        评语：{$detail.order_price.message|default="用户暂未评论"}
+                    </td>
+                </tr>
+
+                <tr>
                     <th width="100">发票信息</th>
                     <td colspan="7">
                         <if condition="$detail.invoice_info.needInvoice eq 0">
