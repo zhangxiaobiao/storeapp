@@ -54,8 +54,8 @@ class WxNotify extends \WxPayNotify
     private function reduceStock($stockStatus)
     {
         foreach ($stockStatus['pStatusArray'] as $singlePStatus){
-            ProductModel::where('id', $singlePStatus['id'])->setDec('store_count', $singlePStatus['count']);
-            ProductModel::where('id', $singlePStatus['id'])->setInc('sales_sum', $singlePStatus['count']);
+            ProductModel::where('id', $singlePStatus['id'])->setDec('store_count', $singlePStatus['counts']);
+            ProductModel::where('id', $singlePStatus['id'])->setInc('sales_sum', $singlePStatus['counts']);
         }
     }
 
@@ -63,5 +63,6 @@ class WxNotify extends \WxPayNotify
     {
         $status = $success ? OrderStatusEnum::PAID : OrderStatusEnum::PAID_BUT_OUT_OF;
         ProductOrderModel::where('id', $orderID)->update(['status'=>$status,'pay_time'=>time()]);
+
     }
 }

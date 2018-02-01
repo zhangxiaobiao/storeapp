@@ -54,16 +54,25 @@ class ProductOrderModel extends Model
 
     public function getCreateTimeAttr($value)
     {
+        if (empty($value)){
+            return null;
+        }
         return date("Y-m-d H:i:s", $value);
     }
 
     public function getPayTimeAttr($value)
     {
+        if (empty($value)){
+            return null;
+        }
         return date("Y-m-d H:i:s", $value);
     }
 
     public function getSendTimeAttr($value)
     {
+        if (empty($value)){
+            return null;
+        }
         return date("Y-m-d H:i:s", $value);
     }
 
